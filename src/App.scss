@@ -2,9 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", Arial, sans-serif;
+  color: black;
 }
+
 body {
   max-width: 1440px;
   margin: 0 auto;
-  padding-top: 45px;
+  padding: 45px 100px;
+  overflow-x: hidden;
 }
