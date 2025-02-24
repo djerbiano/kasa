@@ -13,6 +13,7 @@ function Home() {
             key={logement.id}
             photo={logement.cover}
             title={logement.title}
+            id={logement.id}
           />
         ))}
       </div>
