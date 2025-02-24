@@ -2,3 +2,21 @@ main {
   max-width: 1240px;
   margin: 0 auto;
 }
+.containerCard {
+  margin: 50px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  padding: 50px;
+}
+@media (max-width: 900px) {
+  .containerCard {
+    padding: 20px;
+  }
+}
+@media (max-width: 640px){
+  .containerCard {
+    padding: 10px;
+  }
+}
