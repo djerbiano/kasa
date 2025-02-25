@@ -1,7 +1,11 @@
-import "./styles.scss";
-import { useParams, useNavigate } from "react-router";
-import Data from "../../data/logements.json";
 import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router";
+import "./styles.scss";
+import Data from "../../data/logements.json";
+import Tags from "../../components/tags/Tags";
+import Host from "../../components/host/Host";
+import Collapse from "../../components/collapse/Collapse";
+
 
 function Logement() {
   const [oneHousing, setOneHousing] = useState(null);
@@ -20,7 +24,6 @@ function Logement() {
       if (housing.pictures.length === 1) {
         setHidElement(true);
       }
-      console.log(housing);
     } else {
       navigate("/page404", { replace: true });
     }
@@ -43,22 +46,43 @@ function Logement() {
   };
 
   return oneHousing ? (
-    <section className="logementContainer">
+    <div className="logementContainer">
       <div className="carousel">
         <img src={oneHousing.pictures[indexPicture]} alt={oneHousing.title} />
         <i
-          className={`fa-solid fa-chevron-right right ${hidElement ? "active" : ""}`}
+          className={`fa-solid fa-chevron-right right ${
+            hidElement ? "active" : ""
+          }`}
           onClick={nextPicture}
         ></i>
         <i
-          className={`fa-solid fa-chevron-left left ${hidElement ? "active" : ""}`}
+          className={`fa-solid fa-chevron-left left ${
+            hidElement ? "active" : ""
+          }`}
           onClick={previousPicture}
         ></i>
         <span className={`indexPicture ${hidElement ? "active" : ""}`}>
           {indexPicture + 1}/{oneHousing.pictures.length}
         </span>
       </div>
-    </section>
+      <div className="title">
+        <h2>{oneHousing.title}</h2>
+        <p>{oneHousing.location}</p>
+      </div>
+
+      <div className="tagsContainer">
+        {oneHousing.tags.map((tag, index) => (
+          <Tags key={index} content={tag} />
+        ))}
+      </div>
+      <div className="hostConatiner">
+        <Host data={oneHousing} />
+      </div>
+      <div className="collapseContainer">
+        <Collapse title={"Description"} data={oneHousing.description} type={"text"} />
+        <Collapse title={"Équipements"} data={oneHousing.equipments} type={"list"} />
+      </div>
+    </div>
   ) : (
     <p>Chargement...</p>
   );

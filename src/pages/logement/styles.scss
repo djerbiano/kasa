@@ -12,6 +12,7 @@
       object-fit: cover;
       border-radius: 25px;
     }
+
     .right,
     .left {
       position: absolute;
@@ -22,6 +23,7 @@
       color: rgb(255, 255, 255);
       z-index: 10;
     }
+
     .right {
       right: 20px;
     }
@@ -45,4 +47,13 @@
       display: none;
     }
   }
+
+
+
+}
+
+.collapseContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 76px;
 }
