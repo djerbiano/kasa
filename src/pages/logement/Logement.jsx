@@ -65,19 +65,60 @@ function Logement() {
           {indexPicture + 1}/{oneHousing.pictures.length}
         </span>
       </div>
+
+
+
+      <div className="detailsContainer">
+      <div className="details">
       <div className="title">
         <h2>{oneHousing.title}</h2>
         <p>{oneHousing.location}</p>
       </div>
+
+
+
+
+
 
       <div className="tagsContainer">
         {oneHousing.tags.map((tag, index) => (
           <Tags key={index} content={tag} />
         ))}
       </div>
+
+      </div>
+   
+
+
+
       <div className="hostConatiner">
         <Host data={oneHousing} />
       </div>
+      </div>
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div className="collapseContainer">
         <Collapse title={"Description"} data={oneHousing.description} type={"text"} />
         <Collapse title={"Équipements"} data={oneHousing.equipments} type={"list"} />

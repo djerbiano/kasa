@@ -13,9 +13,13 @@ function Host({ data }) {
   }, [data.rating]);
 
   return (
-    <div>
+    <div className="containerHost">
       <div className="contentHost">
-        <p>{data.host.name}</p>
+        <div className="title">
+          <p>{data.host.name.split(" ")[0]}</p>
+          <p>{data.host.name.split(" ")[1]}</p>
+        </div>
+
         <img src={data.host.picture} alt={data.host.name} />
       </div>
       <div className="rating">

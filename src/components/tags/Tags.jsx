@@ -1,5 +1,10 @@
+import "./styles.scss"
 function Tags({ content }) {
-  return <p>{content}</p>;
+  return (
+    <div className="tag">
+      <p>{content}</p>
+    </div>
+  );
 }
 
 export default Tags;

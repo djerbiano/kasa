@@ -1,6 +1,7 @@
 .logementContainer {
   max-width: 1240px;
   margin: 0 auto;
+ 
 
   .carousel {
     margin: 50px 20px;
@@ -31,7 +32,6 @@
     .left {
       left: 20px;
     }
-
     .indexPicture {
       position: absolute;
       bottom: 20px;
@@ -47,13 +47,45 @@
       display: none;
     }
   }
+  .detailsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    position: relative;
+    z-index: 1000;
+    background-color: white;
+   
+   
+    .details {
+      .title {
+        h2 {
+          font-weight: 500;
+          font-size: 36px;
+          line-height: 51.34px;
+          color: #ff6060;
+        }
+        p {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 25.67px;
+          color: #000000;
+        }
+      }
+      .tagsContainer {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+    .hostConatiner {
+      min-width: 167px;
+   
+    }
+  }
 
-
-
-}
-
-.collapseContainer {
-  display: flex;
-  justify-content: space-between;
-  gap: 76px;
+  .collapseContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 76px;
+    margin: 0 20px;
+  }
 }
