@@ -31,10 +31,8 @@
       align-content: center;
     }
   }
-
   .content {
     min-width: 50%;
-    padding: 20px;
     border-radius: 10px 10px 5px 5px;
     background-color: #f6f6f6;
     max-height: 0px;
@@ -45,13 +43,15 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transform: translateY(-100%);
+    transform: scaleY(0);
+    transform-origin: top;
     transition: all 0.5s ease;
     opacity: 0;
 
     &.open {
-      transform: translateY(0);
+      transform: scaleY(1);
       max-height: 500px;
+      padding: 20px;
       opacity: 1;
     }
   }

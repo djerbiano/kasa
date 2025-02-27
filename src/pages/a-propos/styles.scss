@@ -1,0 +1,17 @@
+.containerApropos {
+  max-width: 1240px;
+  margin: 0 auto;
+
+  .collapseContainer {
+    max-width: 1023px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &:nth-last-child(1) {
+      margin-bottom: 38px;
+    }
+  }
+}
