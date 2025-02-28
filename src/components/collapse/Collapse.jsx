@@ -24,12 +24,14 @@ function Collapse({ title, data, type }) {
         </span>
       </div>
 
-      <div className={`content ${isOpen ? "open" : ""}`}>
-        {type === "list" ? (
-          data.map((item) => <p key={item}>{item}</p>)
-        ) : (
-          <p>{data}</p>
-        )}
+      <div className={`content-wrapper ${isOpen ? "open" : ""}`}>
+        <div className="content">
+          {type === "list" ? (
+            data.map((item) => <p key={item}>{item}</p>)
+          ) : (
+            <p>{data}</p>
+          )}
+        </div>
       </div>
     </div>
   );
