@@ -5,6 +5,7 @@
   align-items: center;
   gap: 50px;
   margin-bottom: 139px;
+  text-align: center;
   h2 {
     font-weight: 700;
     font-size: 288px;
@@ -14,6 +15,7 @@
   }
 
   p {
+    padding: 0 20px;
     font-weight: 500;
     font-size: 36px;
     line-height: 51.34px;
@@ -28,5 +30,22 @@
     text-decoration: underline;
     border: none;
     cursor: pointer;
+  }
+
+  //media queries
+  @media (max-width: 768px) {
+    h2 {
+      margin-top: 113px;
+      font-weight: 700;
+      font-size: 96px;
+      line-height: 136.9px;
+    }
+
+    p {
+      padding: 0 20px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 25.67px;
+    }
   }
 }

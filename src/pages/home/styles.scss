@@ -9,16 +9,11 @@ main {
   background-color: #f6f6f6;
   border-radius: 25px;
   padding: 50px;
-}
 
-// media queries
-@media (max-width: 900px) {
-  .containerCard {
-    padding: 20px;
-  }
-}
-@media (max-width: 640px) {
-  .containerCard {
-    padding: 10px;
+  // media queries
+  @media (max-width: 768px) {
+    padding: 0px;
+    background-color: white;
+    margin: 20px 20px;
   }
 }

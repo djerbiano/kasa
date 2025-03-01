@@ -55,4 +55,19 @@
     min-width: 50%;
     padding: 20px;
   }
+
+  @media (max-width: 768px) {
+    .summary {
+      font-size: 13px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    .content {
+      font-size: 13px;
+      line-height: 17.11px;
+    }
+  }
 }
