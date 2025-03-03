@@ -12,6 +12,7 @@ function Logement() {
   const [hidElement, setHidElement] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
+  const [isFading, setIsFading] = useState(false);
 
   // function to find one housing
   useEffect(() => {
@@ -29,25 +30,37 @@ function Logement() {
   }, [id, navigate]);
 
   const nextPicture = () => {
-    if (indexPicture < oneHousing.pictures.length - 1) {
-      setIndexPicture(indexPicture + 1);
-    } else {
-      setIndexPicture(0);
-    }
+    setIsFading(true);
+    setTimeout(() => {
+      if (indexPicture < oneHousing.pictures.length - 1) {
+        setIndexPicture(indexPicture + 1);
+      } else {
+        setIndexPicture(0);
+      }
+      setIsFading(false);
+    }, 600);
   };
 
   const previousPicture = () => {
-    if (indexPicture > 0) {
-      setIndexPicture(indexPicture - 1);
-    } else {
-      setIndexPicture(oneHousing.pictures.length - 1);
-    }
+    setIsFading(true);
+    setTimeout(() => {
+      if (indexPicture > 0) {
+        setIndexPicture(indexPicture - 1);
+      } else {
+        setIndexPicture(oneHousing.pictures.length - 1);
+      }
+      setIsFading(false);
+    }, 600);
   };
 
   return oneHousing ? (
     <div className="logementContainer">
       <div className="carousel">
-        <img src={oneHousing.pictures[indexPicture]} alt={oneHousing.title} />
+        <img
+          src={oneHousing.pictures[indexPicture]}
+          alt={oneHousing.title}
+          className={isFading ? "fade" : "show"}
+        />
         <i
           className={`fa-solid fa-chevron-right right ${
             hidElement ? "active" : ""
