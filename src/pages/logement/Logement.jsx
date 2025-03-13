@@ -5,14 +5,13 @@ import Data from "../../data/logements.json";
 import Tags from "../../components/tags/Tags";
 import Host from "../../components/host/Host";
 import Collapse from "../../components/collapse/Collapse";
+import Gallery from "../../components/carousel/Gallery";
 
 function Logement() {
   const [oneHousing, setOneHousing] = useState(null);
-  const [indexPicture, setIndexPicture] = useState(0);
   const [hidElement, setHidElement] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
-  const [isFading, setIsFading] = useState(false);
 
   // function to find one housing
   useEffect(() => {
@@ -29,55 +28,11 @@ function Logement() {
     }
   }, [id, navigate]);
 
-  const nextPicture = () => {
-    setIsFading(true);
-    setTimeout(() => {
-      if (indexPicture < oneHousing.pictures.length - 1) {
-        setIndexPicture(indexPicture + 1);
-      } else {
-        setIndexPicture(0);
-      }
-      setIsFading(false);
-    }, 600);
-  };
 
-  const previousPicture = () => {
-    setIsFading(true);
-    setTimeout(() => {
-      if (indexPicture > 0) {
-        setIndexPicture(indexPicture - 1);
-      } else {
-        setIndexPicture(oneHousing.pictures.length - 1);
-      }
-      setIsFading(false);
-    }, 600);
-  };
 
   return oneHousing ? (
     <div className="logementContainer">
-      <div className="carousel">
-        <img
-          src={oneHousing.pictures[indexPicture]}
-          alt={oneHousing.title}
-          className={isFading ? "fade" : "show"}
-        />
-        <i
-          className={`fa-solid fa-chevron-right right ${
-            hidElement ? "active" : ""
-          }`}
-          onClick={nextPicture}
-        ></i>
-        <i
-          className={`fa-solid fa-chevron-left left ${
-            hidElement ? "active" : ""
-          }`}
-          onClick={previousPicture}
-        ></i>
-        <span className={`indexPicture ${hidElement ? "active" : ""}`}>
-          {indexPicture + 1}/{oneHousing.pictures.length}
-        </span>
-      </div>
-
+      <Gallery id={id} oneHousing={oneHousing} hidElement={hidElement} />
       <div className="detailsContainer">
         <div className="details">
           <div className="title">
