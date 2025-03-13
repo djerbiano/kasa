@@ -14,3 +14,21 @@ body {
   padding-top: 45px;
   overflow-x: hidden;
 }
+/* Style de scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #929496;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6e7072;
+}
+html {
+  scroll-behavior: smooth;
+}

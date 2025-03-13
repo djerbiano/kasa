@@ -28,11 +28,10 @@ function Logement() {
     }
   }, [id, navigate]);
 
-
-
   return oneHousing ? (
     <div className="logementContainer">
       <Gallery id={id} oneHousing={oneHousing} hidElement={hidElement} />
+
       <div className="detailsContainer">
         <div className="details">
           <div className="title">

@@ -5,10 +5,12 @@ import Apropos from "../pages/a-propos/Apropos";
 import Page404 from "../pages/page404/Page404";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
+import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 
 function Navigation() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

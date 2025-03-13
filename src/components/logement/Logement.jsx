@@ -11,7 +11,7 @@ function Logement({ photo, title, id }) {
   return (
     <article className="oneLogementContainer">
       <div className="oneLogement" onClick={() => getLogement(id)}>
-        <img src={photo} alt={title} />
+        <img src={photo} alt={title} loading="lazy" />
         <div className="colorBackText">
           <p>{title}</p>
         </div>
