@@ -12,8 +12,8 @@ function Gallery({ oneHousing, hidElement }) {
       } else {
         setIndexPicture(0);
       }
-      setIsFading(false);
-    }, 650);
+      setTimeout(() => setIsFading(false), 400);
+    }, 600);
   };
 
   const previousPicture = () => {
@@ -24,31 +24,15 @@ function Gallery({ oneHousing, hidElement }) {
       } else {
         setIndexPicture(oneHousing.pictures.length - 1);
       }
-      setIsFading(false);
-    }, 650);
+      setTimeout(() => setIsFading(false), 400);
+    }, 600);
   };
   return (
     <div className="carousel">
-      <img
-        src={oneHousing.pictures[indexPicture]}
-        alt={oneHousing.title}
-        className={isFading ? "fade" : "show"}
-      />
-      <i
-        className={`fa-solid fa-chevron-right right ${
-          hidElement ? "active" : ""
-        }`}
-        onClick={nextPicture}
-      ></i>
-      <i
-        className={`fa-solid fa-chevron-left left ${
-          hidElement ? "active" : ""
-        }`}
-        onClick={previousPicture}
-      ></i>
-      <span className={`indexPicture ${hidElement ? "active" : ""}`}>
-        {indexPicture + 1}/{oneHousing.pictures.length}
-      </span>
+      <img src={oneHousing.pictures[indexPicture]} alt={oneHousing.title} className={isFading ? "fade" : "show"}/>
+      <i className={`fa-solid fa-chevron-right right ${hidElement ? "active" : ""}`}onClick={nextPicture}></i>
+      <i className={`fa-solid fa-chevron-left left ${hidElement ? "active" : ""}`}onClick={previousPicture}></i>
+      <span className={`indexPicture ${hidElement ? "active" : ""}`}>{indexPicture + 1}/{oneHousing.pictures.length}</span>
     </div>
   );
 }

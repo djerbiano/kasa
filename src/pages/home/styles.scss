@@ -11,6 +11,9 @@ main {
   padding: 50px;
 
   // media queries
+  @media (max-width: 1024px) {
+    padding: 20px;
+  }
   @media (max-width: 768px) {
     padding: 0px;
     background-color: white;

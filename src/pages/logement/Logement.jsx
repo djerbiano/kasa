@@ -30,6 +30,7 @@ function Logement() {
 
   return oneHousing ? (
     <div className="logementContainer">
+      
       <Gallery id={id} oneHousing={oneHousing} hidElement={hidElement} />
 
       <div className="detailsContainer">
