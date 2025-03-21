@@ -24,12 +24,7 @@ function Host({ data }) {
       </div>
       <div className="rating">
         {starArray.map((star, index) => (
-          <i
-            key={index}
-            className={`fa-solid fa-star ${
-              star ? "ratingColorPositive" : "ratingColorNegative"
-            }`}
-          ></i>
+          <i key={index} className={`fa-solid fa-star ${star ? "ratingColorPositive" : "ratingColorNegative"}`}></i>
         ))}
       </div>
     </div>

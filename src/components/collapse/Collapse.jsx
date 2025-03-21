@@ -14,23 +14,13 @@ function Collapse({ title, data, type }) {
             setIsOpen(!isOpen);
           }}
         >
-          <i
-            className={
-              collapseIcone
-                ? "fa-solid fa-chevron-down"
-                : "fa-solid fa-chevron-up"
-            }
-          ></i>
+          <i className={collapseIcone ? "fa-solid fa-chevron-down" : "fa-solid fa-chevron-up"}></i>
         </span>
       </div>
 
       <div className={`content-wrapper ${isOpen ? "open" : ""}`}>
         <div className="content">
-          {type === "list" ? (
-            data.map((item) => <p key={item}>{item}</p>)
-          ) : (
-            <p>{data}</p>
-          )}
+          {type === "list" ? (data.map((item) => <p key={item}>{item}</p>)) : (<p>{data}</p>)}
         </div>
       </div>
     </div>
